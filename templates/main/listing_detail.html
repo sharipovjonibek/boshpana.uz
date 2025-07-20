@@ -1,0 +1,192 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ listing.property_name }} - Boshpana{% endblock %}
+
+{% block extra_head %}
+<style>
+    .blur-content {
+        filter: blur(4px);
+        user-select: none;
+        pointer-events: none;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+
+<!-- Main Content -->
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Left Column - Images and Details -->
+        <div class="lg:col-span-2">
+            <!-- Page Title -->
+            <div class="mb-6">
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{{ listing.property_name }}</h1>
+                <div class="flex items-center text-gray-600">
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    <span class="text-lg">{{ listing.location|title }}</span>
+                </div>
+            </div>
+
+            <!-- Image Section -->
+            <div class="mb-8">
+                <div class="relative rounded-2xl overflow-hidden shadow-lg">
+                    {% if main_image %}
+                        <img src="{{ main_image }}" alt="{{ listing.title }}" class="w-full h-64 md:h-96 object-cover">
+                    {% else %}
+                        <div class="w-full h-64 md:h-96 bg-gray-200 flex items-center justify-center">
+                            <div class="text-center">
+                                <i class="fas fa-home text-gray-400 text-6xl mb-4"></i>
+                                <p class="text-gray-500 text-lg">Rasm yo'q</p>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <!-- Verified Badge -->
+                    <div class="absolute top-4 right-4">
+                        {% if listing.verified %}
+                        <span class="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1 shadow-lg">
+                            <i class="fas fa-check-circle"></i>
+                            Tasdiqlangan
+                        </span>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <!-- Basic Info Section -->
+            <div class="bg-white rounded-2xl shadow-sm border p-6 mb-8">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Uy haqida ma'lumot</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                        <i class="fas fa-bed text-blue-600 text-xl mb-2"></i>
+                        <p class="text-sm font-medium text-gray-900">{{ listing.rooms }} xona</p>
+                    </div>
+                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                        <i class="fas fa-bath text-blue-600 text-xl mb-2"></i>
+                        <p class="text-sm font-medium text-gray-900">1 hammom</p>
+                    </div>
+                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                        <i class="fas fa-ruler-combined text-blue-600 text-xl mb-2"></i>
+                        <p class="text-sm font-medium text-gray-900">{{ listing.area }} m²</p>
+                    </div>
+                    <div class="text-center p-3 bg-gray-50 rounded-lg">
+                        <i class="fas fa-building text-blue-600 text-xl mb-2"></i>
+                        <p class="text-sm font-medium text-gray-900">{{ listing.floor }}-qavat / {{ listing.total_floors }}</p>
+                    </div>
+                </div>
+                <!-- Description -->
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-900 mb-3">Qisqacha tavsif</h3>
+                    <p class="text-gray-700 leading-relaxed">
+                        {{ listing.description|truncatechars:250 }}
+                    </p>
+                </div>
+            </div>
+
+            <!-- Hidden/Blurred Contact Info -->
+            <div class="bg-white rounded-2xl shadow-sm border p-6 relative overflow-hidden">
+                <h2 class="text-2xl font-bold text-gray-900 mb-6">Aloqa ma'lumotlari</h2>
+                <div class="blur-content">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-sm font-medium text-gray-500 mb-2">Egasi</h3>
+                            <p class="text-lg font-semibold text-gray-900">{{ listing.owner_name }}</p>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-medium text-gray-500 mb-2">Telefon raqami</h3>
+                            <p class="text-lg font-semibold text-gray-900">{{ listing.phone_number }}</p>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-medium text-gray-500 mb-2">Passport</h3>
+                            <p class="text-lg font-semibold text-gray-900">{{ listing.passport }}</p>
+                        </div>
+                        <div>
+                            <h3 class="text-sm font-medium text-gray-500 mb-2">Qo'shimcha</h3>
+                            <p class="text-lg font-semibold text-gray-900">Telegram: @premium_only</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="absolute inset-0 bg-white bg-opacity-90 flex items-center justify-center">
+                    <div class="text-center p-6">
+                        <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-lock text-blue-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Bu ma'lumotlar faqat obunachilar uchun ochiladi</h3>
+                        <p class="text-gray-600 mb-4">Uy egasi bilan bog'lanish uchun premium a'zolik kerak</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Right Column - Sidebar -->
+        <div class="lg:col-span-1">
+            <div class="bg-white rounded-2xl shadow-sm border p-6 mb-6 sticky top-6">
+                <div class="text-center mb-6">
+                    <p class="text-3xl font-bold text-blue-600 mb-1">{{ formatted_price }} so'm</p>
+                    <p class="text-gray-600">oyiga</p>
+                </div>
+                <a href="/premium/" class="block w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-6 rounded-xl text-center transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl mb-4">
+                    <i class="fas fa-unlock mr-2"></i>
+                    To'liq ma'lumotni ko'rish
+                    <span class="block text-sm font-normal mt-1">50,000 so'm</span>
+                </a>
+                <p class="text-center text-gray-500 text-sm">
+                    <i class="fas fa-shield-alt mr-1"></i>
+                    10 kun davomida barcha e'lonlarga kirish
+                </p>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm border p-6 mb-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Uyning imkoniyatlari</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center">
+                        <i class="fas fa-wifi text-green-600 mr-3"></i>
+                        <span class="text-gray-700">Wi-Fi internet</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-snowflake text-green-600 mr-3"></i>
+                        <span class="text-gray-700">Konditsioner</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-tv text-green-600 mr-3"></i>
+                        <span class="text-gray-700">Televizor</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-utensils text-green-600 mr-3"></i>
+                        <span class="text-gray-700">To'liq jihozlangan oshxona</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-car text-green-600 mr-3"></i>
+                        <span class="text-gray-700">Avtomobil joyi</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-shield-alt text-green-600 mr-3"></i>
+                        <span class="text-gray-700">Xavfsizlik tizimi</span>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-white rounded-2xl shadow-sm border p-6">
+                <h3 class="text-lg font-semibold text-gray-900 mb-4">Joylashuv</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center">
+                        <i class="fas fa-subway text-blue-600 mr-3"></i>
+                        <span class="text-gray-700">Chilonzor metro - 5 daqiqa</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-shopping-cart text-blue-600 mr-3"></i>
+                        <span class="text-gray-700">Mega Planet - 10 daqiqa</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-graduation-cap text-blue-600 mr-3"></i>
+                        <span class="text-gray-700">Maktab - 3 daqiqa</span>
+                    </div>
+                    <div class="flex items-center">
+                        <i class="fas fa-hospital text-blue-600 mr-3"></i>
+                        <span class="text-gray-700">Poliklinika - 7 daqiqa</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %} 

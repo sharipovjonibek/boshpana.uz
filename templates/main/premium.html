@@ -1,0 +1,236 @@
+{% extends 'base.html' %}
+
+{% block title %}Batafsil ko'rish uchun a'zo bo'ling - Boshpana{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="bg-gradient-to-br from-blue-600 via-blue-700 to-purple-700 text-white relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute inset-0" style="background-image: url('data:image/svg+xml,<svg width=\"60\" height=\"60\" viewBox=\"0 0 60 60\" xmlns=\"http://www.w3.org/2000/svg\"><g fill=\"none\" fill-rule=\"evenodd\"><g fill=\"%23ffffff\" fill-opacity=\"0.1\"><circle cx=\"30\" cy=\"30\" r=\"2\"/></g></g></svg>');"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-28 text-center">
+        <div class="w-20 h-20 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-8">
+            <i class="fas fa-lock text-3xl text-white"></i>
+        </div>
+        <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+            Batafsil ko'rish uchun a'zo bo'ling
+        </h1>
+        <p class="text-lg md:text-xl text-blue-100 max-w-3xl mx-auto leading-relaxed">
+            Uy egasining kontaktlari, manzil va boshqa maxfiy ma'lumotlarni ko'rish uchun obuna bo'ling.
+        </p>
+    </div>
+</section>
+
+<!-- Pricing Section -->
+<section class="py-16 lg:py-20 relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden transform hover:scale-105 transition-transform duration-300">
+            <div class="bg-gradient-to-r from-blue-600 to-purple-600 px-8 py-8 text-center text-white">
+                <div class="w-16 h-16 bg-white bg-opacity-20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-crown text-2xl"></i>
+                </div>
+                <h2 class="text-2xl md:text-3xl font-bold mb-2">Premium A'zolik</h2>
+                <p class="text-blue-100">To'liq kirish imkoniyati</p>
+            </div>
+            <div class="px-8 py-8 text-center border-b border-gray-100">
+                <div class="text-5xl md:text-6xl font-bold text-gray-900 mb-2">
+                    50,000
+                    <span class="text-2xl text-gray-600 font-normal">so'm</span>
+                </div>
+                <p class="text-xl text-gray-600 font-medium">10 kunlik a'zolik</p>
+                <div class="mt-4 inline-flex items-center px-4 py-2 bg-green-100 text-green-800 rounded-full text-sm font-medium">
+                    <i class="fas fa-fire mr-2"></i>
+                    Eng mashhur tanlov
+                </div>
+            </div>
+            <div class="px-8 py-8">
+                <h3 class="text-xl font-semibold text-gray-900 mb-6 text-center">Nima olasiz:</h3>
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-0.5">
+                            <i class="fas fa-check text-green-600 text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-900 font-medium">Har bir e'lon admin tomonidan tekshirilgan</p>
+                            <p class="text-gray-600 text-sm">Faqat haqiqiy va ishonchli takliflar</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-0.5">
+                            <i class="fas fa-check text-green-600 text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-900 font-medium">To'liq ma'lumotga kirish</p>
+                            <p class="text-gray-600 text-sm">Telefon raqami, aniq manzil va batafsil tavsif</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-0.5">
+                            <i class="fas fa-check text-green-600 text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-900 font-medium">10 kun davomida cheksiz ko'rish</p>
+                            <p class="text-gray-600 text-sm">Barcha e'lonlarni cheklovsiz ko'rib chiqing</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-0.5">
+                            <i class="fas fa-check text-green-600 text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-900 font-medium">Firibgarlikdan himoya</p>
+                            <p class="text-gray-600 text-sm">Soxta e'lonlar va firibgar maklerlarsiz</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center mr-4 mt-0.5">
+                            <i class="fas fa-check text-green-600 text-sm"></i>
+                        </div>
+                        <div>
+                            <p class="text-gray-900 font-medium">24/7 qo'llab-quvvatlash</p>
+                            <p class="text-gray-600 text-sm">Har qanday savol bo'yicha yordam</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="px-8 pb-8">
+                <form onsubmit="event.preventDefault(); alert('Tez orada mavjud bo\'ladi!');" method="POST" action="/subscribe/">
+                    {% csrf_token %}
+                    <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold py-4 px-8 rounded-xl text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+                        <i class="fas fa-crown mr-2"></i>
+                        Obuna bo'lish
+                    </button>
+                </form>
+                <p class="text-center text-gray-500 text-sm mt-4">
+                    <i class="fas fa-shield-alt mr-1"></i>
+                    Xavfsiz to'lov. Istalgan vaqtda bekor qilish mumkin.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Why Subscribe Section -->
+<section class="py-16 lg:py-20 bg-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Nega a'zo bo'lishim kerak?</h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                Boshpana a'zoligi sizga vaqt tejash va ishonchli uy topish imkonini beradi
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Reason 1 -->
+            <div class="text-center p-6 rounded-xl bg-blue-50 hover:bg-blue-100 transition-colors">
+                <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-clock text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Vaqt tejash</h3>
+                <p class="text-gray-600">
+                    Soxta e'lonlar bilan vaqt yo'qotmang. Faqat tekshirilgan va haqiqiy takliflarni ko'ring.
+                </p>
+            </div>
+            <!-- Reason 2 -->
+            <div class="text-center p-6 rounded-xl bg-green-50 hover:bg-green-100 transition-colors">
+                <div class="w-16 h-16 bg-green-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-shield-alt text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Xavfsizlik</h3>
+                <p class="text-gray-600">
+                    Firibgar maklerlarsiz to'g'ridan-to'g'ri uy egasi bilan bog'laning va xavfsiz bitim tuzng.
+                </p>
+            </div>
+            <!-- Reason 3 -->
+            <div class="text-center p-6 rounded-xl bg-purple-50 hover:bg-purple-100 transition-colors">
+                <div class="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <i class="fas fa-star text-white text-2xl"></i>
+                </div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Sifat kafolati</h3>
+                <p class="text-gray-600">
+                    Har bir e'lon admin tomonidan tekshiriladi va faqat sifatli takliflar tasdiqlanadi.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials Section -->
+<section class="py-16 lg:py-20 bg-gray-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">Mijozlarimiz fikri</h2>
+            <p class="text-xl text-gray-600">
+                Minglab odamlar Boshpana orqali o'zlariga mos uy topdilar
+            </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Testimonial 1 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-user text-blue-600"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-900">Aziza Karimova</h4>
+                        <p class="text-gray-600 text-sm">Talaba</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 italic">
+                    "Boshpana orqali 2 kun ichida o'zimga mos kvartira topdim. Hech qanday firibgar makler bilan ish qilmadim!"
+                </p>
+                <div class="flex text-yellow-400 mt-4">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <!-- Testimonial 2 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-user text-green-600"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-900">Bobur Toshmatov</h4>
+                        <p class="text-gray-600 text-sm">Ishchi</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 italic">
+                    "50,000 so'm to'lab, minglab so'm tejadim. Makler komisyonlari yo'q, faqat haqiqiy e'lonlar!"
+                </p>
+                <div class="flex text-yellow-400 mt-4">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+            <!-- Testimonial 3 -->
+            <div class="bg-white p-6 rounded-xl shadow-sm">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mr-4">
+                        <i class="fas fa-user text-purple-600"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-semibold text-gray-900">Malika Rahimova</h4>
+                        <p class="text-gray-600 text-sm">O'qituvchi</p>
+                    </div>
+                </div>
+                <p class="text-gray-700 italic">
+                    "Platformaning xavfsizligi va ishonchliligi meni hayratda qoldirdi. Tavsiya qilaman!"
+                </p>
+                <div class="flex text-yellow-400 mt-4">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %} 

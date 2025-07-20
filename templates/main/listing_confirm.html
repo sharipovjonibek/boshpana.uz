@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}E'lon tasdiqlanmoqda{% endblock %}
+
+{% block content %}
+<div class="max-w-xl mx-auto text-center py-24">
+    <div id="tasdiq" class="text-3xl font-bold text-blue-600 mb-6">Tasdiqlanmoqda...</div>
+    <div id="tasdiqlandi" class="text-3xl font-bold text-green-600 mb-6 hidden">Tasdiqlandi!</div>
+    <p class="text-gray-500">E'loningiz tez orada ro'yxatda paydo bo'ladi.</p>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    setTimeout(function() {
+        document.getElementById('tasdiq').classList.add('hidden');
+        document.getElementById('tasdiqlandi').classList.remove('hidden');
+        setTimeout(function() {
+            window.location.href = "/listing/";
+        }, 2000);
+    }, 10000);
+</script>
+{% endblock %} 
