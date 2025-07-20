@@ -12,12 +12,12 @@
 
 {% block extra_js %}
 <script>
-    setTimeout(function() {
-        document.getElementById('tasdiq').classList.add('hidden');
-        document.getElementById('tasdiqlandi').classList.remove('hidden');
-        setTimeout(function() {
-            window.location.href = "/listing/";
-        }, 2000);
-    }, 10000);
+setTimeout(function () {
+    document.getElementById('tasdiq').classList.add('hidden');
+    document.getElementById('tasdiqlandi').classList.remove('hidden');
+    setTimeout(function () {
+        window.location.href = "/listing/";
+    }, 1000);  // inner wait
+}, 2000);       // outer wait
 </script>
 {% endblock %} 
