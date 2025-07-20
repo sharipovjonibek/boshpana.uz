@@ -7,4 +7,5 @@ crispy-bootstrap5
 django-widget-tweaks
 django-ckeditor
 python-decouple
+pillow
 sqlparse
